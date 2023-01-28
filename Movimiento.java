@@ -39,7 +39,7 @@ public class Movimiento {
             }
         }
 
-        tablero.DibujarTablero(dato);
+        LimpiarPantalla.limpiarPantalla();
         return dato;
     }
 }

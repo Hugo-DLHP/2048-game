@@ -7,17 +7,20 @@ public class principal {
         
         Scanner sc = new Scanner(System.in);
         Tablero tablero_1 = new Tablero();
-        int[][] tablero = new int[4][4];
-    
+        int[][] tablero = new int[4][4];    
         char nuevoMov;
+        
 
-        tablero[3][1] = 2;
-        tablero[3][2] = 2; 
-        
+        GenerarNumeros.generarNumeros(tablero);        
+        GenerarNumeros.generarNumeros(tablero);
         tablero_1.DibujarTablero(tablero);
-        nuevoMov = sc.nextLine().charAt(0);
-        Movimiento.movimiento(nuevoMov, tablero, tablero_1);
-        sc.nextLine();
-        
+
+
+        for (int i = 0; i < 100; i++) {
+            nuevoMov = sc.nextLine().charAt(0);
+            Movimiento.movimiento(nuevoMov, tablero, tablero_1);
+            GenerarNumeros.generarNumeros(tablero, tablero_1);  
+        }
+        sc.close();
     }
 }

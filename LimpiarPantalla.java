@@ -1,15 +1,12 @@
 package DAW.Programación.Ejercicios.programas.Trim_2.A2048_game;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class LimpiarPantalla {
 /**********************************************************************************/
 /*******************ESTA FUNCION LA HE ENCONTRADO EN INTERNET**********************/
 /**********************************************************************************/
     public static void limpiarPantalla(){
-
-        Scanner sc = new Scanner(System.in);
 
         try {
             String sistemaOperativo = System.getProperty("os.name");
@@ -30,7 +27,6 @@ public class LimpiarPantalla {
         } catch (Exception e) {
             System.out.println("Error al limpiar la pantalla"+e.getMessage());
         }
-        sc.close();
     }
 /**********************************************************************************/
 /**********************************************************************************/
