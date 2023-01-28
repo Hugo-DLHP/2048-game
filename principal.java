@@ -9,10 +9,10 @@ public class principal {
         Tablero tablero_1 = new Tablero();
         int[][] tablero = new int[4][4];    
         char nuevoMov;
-        
 
-        GenerarNumeros.generarNumeros(tablero);        
-        GenerarNumeros.generarNumeros(tablero);
+        LimpiarPantalla.limpiarPantalla();
+        //GenerarNumeros.generarNumeros(tablero);        
+        //GenerarNumeros.generarNumeros(tablero);
         tablero_1.DibujarTablero(tablero);
 
 
