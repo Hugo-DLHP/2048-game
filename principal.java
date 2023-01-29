@@ -11,8 +11,8 @@ public class principal {
         char nuevoMov;
 
         LimpiarPantalla.limpiarPantalla();
-        //GenerarNumeros.generarNumeros(tablero);        
-        //GenerarNumeros.generarNumeros(tablero);
+        GenerarNumeros.generarNumeros(tablero);        
+        GenerarNumeros.generarNumeros(tablero);
         tablero_1.DibujarTablero(tablero);
 
 
