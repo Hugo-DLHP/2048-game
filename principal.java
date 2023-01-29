@@ -22,5 +22,35 @@ public class principal {
             GenerarNumeros.generarNumeros(tablero, tablero_1);  
         }
         sc.close();
+
+
+        //Creacion del movimiento terminada.
+        //lo unico que falta es ajustar un par de detalles tales como:
+        /*
+         * Movimiento hacia arriba
+         * |   |   |   |   |  ==>>  |   | 2 |   |   |
+         * |   | 2 |   |   |  ==>>  |   |   |   |   |
+         * |   | 2 |   |   |  ==>>  |   |   |   |   |
+         * |   |   |   |   |  ==>>  |   |   |   |   |
+         * Y ocurre con situaciones similares para el resto de movimietntos
+         */
+
+        /*
+         * Movimiento hacia abajo
+         * | 4 | 4 | 4 | 4 |  ==>>  |   |   |   |   |
+         * |   |   |   |   |  ==>>  |   |   |   |   |
+         * |   |   |   |   |  ==>>  |   |   |   |   |
+         * | 2 |   | 2 |   |  ==>>  | 4 | 4 | 4 | 4 |
+         * Y ocurre con situaciones similares para el resto de movimietntos
+         */
+
+        /*
+         * Movimiento hacia arriba
+         * |   | 2 |   |   |  ==>>  |   | 2 |   |   |
+         * |   |   |   |   |  ==>>  |   |   |   |   |
+         * |   | 2 |   |   |  ==>>  |   |   |   |   |
+         * |   |   |   |   |  ==>>  |   |   |   |   |
+         * Y ocurre con situaciones similares para el resto de movimietntos
+         */
     }
 }

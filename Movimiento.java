@@ -18,6 +18,10 @@ public class Movimiento {
             case 'd','D':
                 derecha(dato, tablero);
             break;
+
+            case 'a','A':
+                izquierda(dato, tablero);
+            break;
         
             default:
                 System.out.println("tecla no valida");
@@ -108,6 +112,39 @@ public class Movimiento {
                     }
                 } else if(dato[y][x] != 0) {
                     for (int k = x - 1; k >= 0; k--) {
+                        if (dato[y][k] == dato[y][x]) {         
+                            dato[y][x] = dato[y][k] * 2;   
+                            dato[y][k] = 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        LimpiarPantalla.limpiarPantalla();
+        return dato;
+    }    
+    /*********************************************************************/
+    /*********************************************************************/
+    /*********************************************************************/
+    /*-------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------*/
+    /*********************************************************************/
+    /****************************IZQUIERDA********************************/
+    /*********************************************************************/
+    public static int[][] izquierda(int[][] dato, Tablero tablero) {
+        for (int y = dato.length - 1; y >= 0; y--) {
+            for (int x = 0; x < dato[0].length; x++) {
+                if (dato[y][x] == 0) {
+                    for (int k = x + 1; k < dato[0].length; k++) {
+                        if (dato[y][k] != 0) {         
+                            dato[y][x] = dato[y][k];   
+                            dato[y][k] = 0;
+                        }
+                    }
+                } else if(dato[y][x] != 0) {
+                    for (int k = x + 1; k < dato[0].length; k++) {
                         if (dato[y][k] == dato[y][x]) {         
                             dato[y][x] = dato[y][k] * 2;   
                             dato[y][k] = 0;
