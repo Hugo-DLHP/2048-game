@@ -35,21 +35,20 @@ public class Movimiento {
     /*******************************ARRIBA********************************/
     /*********************************************************************/    
     public static int[][] arriba(int[][] dato, Tablero tablero) {
-        for (int y = 0; y < dato.length; y++) {
+        for (int y = 0; y < dato.length -1; y++) {
             for (int x = 0; x < dato[0].length; x++) {
                 if (dato[y][x] == 0) {
                     for (int i = y + 1; i < dato.length; i++) { 
                         if (dato[i][x] != 0) {         
                             dato[y][x] = dato[i][x];   
                             dato[i][x] = 0;
+                            i = dato[0].length;
                         }
                     }
                 } else if(dato[y][x] != 0) {
-                    for (int i = y + 1; i < dato.length; i++) { 
-                        if (dato[i][x] == dato[y][x]) {         
-                            dato[y][x] = dato[i][x] * 2;
-                            dato[i][x] = 0;
-                        }
+                    if (dato[y][x] == dato[y+1][x]) {         
+                        dato[y][x] = dato[y][x] * 2;
+                        dato[y+1][x] = 0;
                     }
                 }
             }
@@ -68,21 +67,20 @@ public class Movimiento {
     /********************************ABAJO********************************/
     /*********************************************************************/
     public static int[][] abajo(int[][] dato, Tablero tablero) {
-        for (int y = dato.length - 1; y >= 0; y--) {
+        for (int y = dato.length - 1; y > 0; y--) {
             for (int x = dato[0].length - 1; x >= 0; x--) {
                 if (dato[y][x] == 0) {
                     for (int i = y - 1; i >= 0; i--) { 
                         if (dato[i][x] != 0) {         
                             dato[y][x] = dato[i][x];   
                             dato[i][x] = 0;
+                            i = 0;
                         }
                     }
                 } else if(dato[y][x] != 0) {
-                    for (int i = y - 1; i >= 0; i--) { 
-                        if (dato[i][x] == dato[y][x]) {         
-                            dato[y][x] = dato[i][x] * 2;
-                            dato[i][x] = 0;
-                        }
+                    if (dato[y][x] == dato[y-1][x]) {         
+                        dato[y][x] = dato[y][x] * 2;
+                        dato[y-1][x] = 0;
                     }
                 }
             }
@@ -102,24 +100,26 @@ public class Movimiento {
     /*********************************************************************/
     public static int[][] derecha(int[][] dato, Tablero tablero) {
         for (int y = 0; y < dato.length; y++) {
-            for (int x = dato[0].length - 1; x >= 0; x--) {
+            for (int x = dato[0].length - 1; x > 0; x--) {
                 if (dato[y][x] == 0) {
                     for (int k = x - 1; k >= 0; k--) {
                         if (dato[y][k] != 0) {         
                             dato[y][x] = dato[y][k];   
                             dato[y][k] = 0;
+                            k = 0;
                         }
                     }
                 } else if(dato[y][x] != 0) {
-                    for (int k = x - 1; k >= 0; k--) {
-                        if (dato[y][k] == dato[y][x]) {         
-                            dato[y][x] = dato[y][k] * 2;   
-                            dato[y][k] = 0;
-                        }
+                    if (dato[y][x] == dato[y][x - 1]) {         
+                        dato[y][x] = dato[y][x] * 2;
+                        dato[y][x - 1] = 0;
                     }
                 }
             }
         }
+
+
+
 
         LimpiarPantalla.limpiarPantalla();
         return dato;
@@ -135,20 +135,19 @@ public class Movimiento {
     /*********************************************************************/
     public static int[][] izquierda(int[][] dato, Tablero tablero) {
         for (int y = dato.length - 1; y >= 0; y--) {
-            for (int x = 0; x < dato[0].length; x++) {
+            for (int x = 0; x < dato[0].length - 1; x++) {
                 if (dato[y][x] == 0) {
                     for (int k = x + 1; k < dato[0].length; k++) {
                         if (dato[y][k] != 0) {         
                             dato[y][x] = dato[y][k];   
                             dato[y][k] = 0;
+                            k = dato[0].length;
                         }
                     }
                 } else if(dato[y][x] != 0) {
-                    for (int k = x + 1; k < dato[0].length; k++) {
-                        if (dato[y][k] == dato[y][x]) {         
-                            dato[y][x] = dato[y][k] * 2;   
-                            dato[y][k] = 0;
-                        }
+                    if (dato[y][x] == dato[y][x + 1]) {         
+                        dato[y][x] = dato[y][x] * 2;
+                        dato[y][x + 1] = 0;
                     }
                 }
             }

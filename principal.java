@@ -13,44 +13,23 @@ public class principal {
         LimpiarPantalla.limpiarPantalla();
         GenerarNumeros.generarNumeros(tablero);        
         GenerarNumeros.generarNumeros(tablero);
+
+        //tablero[2][2] = 2;
+        //tablero[3][2] = 4;
+        //tablero[0][2] = 2;
+        //tablero[1][2] = 4;
         tablero_1.DibujarTablero(tablero);
 
 
         for (int i = 0; i < 100; i++) {
             nuevoMov = sc.nextLine().charAt(0);
             Movimiento.movimiento(nuevoMov, tablero, tablero_1);
+            //tablero_1.DibujarTablero(tablero);
+            //tablero[2][2] = 2;
+            //tablero[3][2] = 2;
+            GenerarNumeros.generarNumeros(tablero);  
             GenerarNumeros.generarNumeros(tablero, tablero_1);  
         }
         sc.close();
-
-
-        //Creacion del movimiento terminada.
-        //lo unico que falta es ajustar un par de detalles tales como:
-        /*
-         * Movimiento hacia arriba
-         * |   |   |   |   |  ==>>  |   | 2 |   |   |
-         * |   | 2 |   |   |  ==>>  |   |   |   |   |
-         * |   | 2 |   |   |  ==>>  |   |   |   |   |
-         * |   |   |   |   |  ==>>  |   |   |   |   |
-         * Y ocurre con situaciones similares para el resto de movimietntos
-         */
-
-        /*
-         * Movimiento hacia abajo
-         * | 4 | 4 | 4 | 4 |  ==>>  |   |   |   |   |
-         * |   |   |   |   |  ==>>  |   |   |   |   |
-         * |   |   |   |   |  ==>>  |   |   |   |   |
-         * | 2 |   | 2 |   |  ==>>  | 4 | 4 | 4 | 4 |
-         * Y ocurre con situaciones similares para el resto de movimietntos
-         */
-
-        /*
-         * Movimiento hacia arriba
-         * |   | 2 |   |   |  ==>>  |   | 2 |   |   |
-         * |   |   |   |   |  ==>>  |   |   |   |   |
-         * |   | 2 |   |   |  ==>>  |   |   |   |   |
-         * |   |   |   |   |  ==>>  |   |   |   |   |
-         * Y ocurre con situaciones similares para el resto de movimietntos
-         */
     }
 }

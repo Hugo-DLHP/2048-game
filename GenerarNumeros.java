@@ -39,6 +39,5 @@ public class GenerarNumeros {
         } while (condition != true);
 
         return dato;
-
     }
 }
